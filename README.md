@@ -1,9 +1,7 @@
 # Credit Score Classification
-
 An end-to-end machine learning project designed to predict client credit scores (`Good`, `Standard`, `Poor`). This repository contains the complete Data Science pipeline—from Exploratory Data Analysis (EDA) to advanced Modeling—and a Next.js web application for real-time model testing.
 
 ## Project Overview
-
 This project addresses the financial challenge of credit scoring by balancing accuracy with risk management. Unlike standard classification approaches, this model implements a **"Risk-First" inference strategy** to minimize financial losses associated with false negatives (defaulting clients).
 
 ### Key Features
@@ -14,8 +12,17 @@ This project addresses the financial challenge of credit scoring by balancing ac
 
 ---
 
-## Project Structure
+## Dataset
+The model is trained on the **[Credit Score Classification](https://www.kaggle.com/datasets/parisrohan/credit-score-classification/data)** dataset from Kaggle. This dataset provides a rich set of financial features, including:
+- **Basic Details**: Age, Occupation, Annual Income.
+- **Financial Behavior**: Number of bank accounts, credit cards, interest rates.
+- **Credit History**: Number of loans, delay from due date, credit mix, and outstanding debt.
 
+These features form the basis for classifying clients into `Good`, `Standard`, and `Poor` categories.
+
+---
+
+## Project Structures
 - **`notebooks/credit-score-eda.ipynb`**
   Contains the data analysis pipeline:
   - Data cleaning (handling missing values, typos, and outliers).
@@ -70,6 +77,3 @@ Our solution implements a hierarchical inference logic:
 
 2.  **Stage 2: Standard Classification**
     If the client passes the risk check (i.e., is not classified as "Poor"), the model then decides between "Standard" and "Good" based on the highest probability.
-
----
-
